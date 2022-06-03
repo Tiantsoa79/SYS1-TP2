@@ -29,8 +29,8 @@ Explications des étapes :
 
 •**sed -n '/404$/p'**: filtre avec précision les requêtes 404
 
-• **tail -f ** : affiche chaque ligne
+•tail -f : affiche chaque ligne
 
-• **do iptables -A INPUT -s $1 -j DROP ** : bloque les IP
+•do iptables -A INPUT -s $1 -j DROP ** : bloque les IP
 
-• ** crontab -r $3 ** : bloque les utilisateurs
+•crontab -r $3  : bloque les utilisateurs
