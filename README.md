@@ -1,4 +1,5 @@
-# BLOQUER LES CRAWLERS SUR APACHE2
+# BLOQUER LES SCRAWLERS SUR APACHE2 
+(En une ligne)
 
 ### Aller dans le dossier log d'Apache
 
@@ -17,20 +18,8 @@ nano blocking.sh
 ```
 #!/bin/sh
 
-awk '($9 ~ /404/)' /var/log/httpd/access_log | sed -n '/404$/p' | tail -f; do iptables -A INPUT -s $1 -j DROP |
-crontab -r $3;
-done
+cat /var/log/apache2/access.log | grep 'spider\|bot' | sed 's/[^\/]*/\./;s/].*$//g' | awk '{print $1}' | uniq | sort | tail -n 100 | iptables -A INPUT $1 -j REJECT;
 
 ```
 
-### Explications des étapes :
-
-•**awk '($9 ~ /404/)'** : affiche le 9eme résultat de toutes les requêtes 404 dans access_log
-
-•**sed -n '/404$/p'**: filtre avec précision les requêtes 404
-
-•tail -f : affiche chaque ligne
-
-•do iptables -A INPUT -s $1 -j DROP : bloque les IP
-
-•crontab -r $3  : bloque les utilisateurs
+Ceci permet à la fois d'afficher (cat), de filtrer (grep), de récupérer(des, awk)(plus les paramètres de tri et de regroupement en adresse IP unique(uniq, sort, tail), et de rejeter les requêtes des IP des scrawlers (avec iptables).
