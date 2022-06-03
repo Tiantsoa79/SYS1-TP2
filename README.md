@@ -1,18 +1,18 @@
 # BLOQUER LES CRAWLERS SUR APACHE2
 
-Aller dans le dossier log d'Apache
+###Aller dans le dossier log d'Apache
 
 ```
 cd /var/log/apache2
 ```
 
-Créer le fichier qui va s'occuper du blocage 
+###Créer le fichier qui va s'occuper du blocage 
 
 ```
 nano blocking.sh
 ```
 
-Entrer le script suivant : 
+###Entrer le script suivant : 
 
 ```
 #!/bin/sh
@@ -23,7 +23,7 @@ done
 
 ```
 
-Explications des étapes :
+###Explications des étapes :
 
 •**awk '($9 ~ /404/)'** : affiche le 9eme résultat de toutes les requêtes 404 dans access_log
 
