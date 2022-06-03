@@ -31,6 +31,6 @@ Explications des étapes :
 
 •tail -f : affiche chaque ligne
 
-•do iptables -A INPUT -s $1 -j DROP ** : bloque les IP
+•do iptables -A INPUT -s $1 -j DROP : bloque les IP
 
 •crontab -r $3  : bloque les utilisateurs
