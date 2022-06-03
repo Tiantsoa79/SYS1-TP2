@@ -23,3 +23,13 @@ cat /var/log/apache2/access.log | grep 'spider\|bot' | sed 's/[^\/]*/\./;s/].*$/
 ```
 
 Ceci permet à la fois d'afficher (cat), de filtrer (grep), de récupérer(des, awk)(plus les paramètres de tri et de regroupement en adresse IP unique(uniq, sort, tail), et de rejeter les requêtes des IP des scrawlers (avec iptables).
+
+####il suffit ensuite de donner les droits sur le script
+
+```
+chmod +x blocking.sh
+```
+###et de l'exécuter
+```
+./blocking.sh
+```
