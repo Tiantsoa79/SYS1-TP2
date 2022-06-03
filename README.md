@@ -1,5 +1,8 @@
 # BLOQUER LES SCRAWLERS SUR APACHE2 
-(En une ligne)
+(En une ligne de script)
+
+Les termes de crawler, robot de crawl ou spider, désignent dans le monde de l'informatique un robot d'indexation. Concrètement, il s'agit d'un logiciel qui a pour principale mission d'explorer le Web afin d'analyser le contenu des documents visités et les stocker de manière organisée dans un index.
+Pour les bloquer, suivez les étapes suivantes : 
 
 ### Aller dans le dossier log d'Apache
 
